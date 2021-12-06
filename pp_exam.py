@@ -1,3 +1,8 @@
+# 2021/12/06
+# pp_exam.py
+# git test
+#
+#
 # 2021/12/02
 # test_sim_coords8.py
 # add execute filename.py print
@@ -19,6 +24,7 @@
 # rewrite model.xls(add FPC design drawing)
 # edit C1L value(axisY)
 # edit C1R value(axisXY)
+#
 #
 
 import numpy as np
@@ -173,12 +179,20 @@ def test(mycobot):
         mycobot.send_coord(Coord.Z.value,set_height, 10) # Z value set
 #        print("::get_coords() ==> coords: {}".format(mycobot.get_coords()))
         time.sleep(wait)
+        print("upC1L,Z=",i,C1L,set_height)
+        print("gtC1L=",np.array(mycobot.get_coords()))
+#        print("upC1L-gtC1L=",C1L-np.array(mycobot.get_coords()))
+
+
 
 # for test (to C1L)up
         print("===== 3 ==> C1Lup")
         mycobot.send_coord(Coord.Z.value,up_height, 10)
         time.sleep(wait+1)
 #        print("::get_coords() ==> coords: {}".format(mycobot.get_coords()))
+        print("upC1L,Z=",i,C1L,up_height)
+        print("gtC1L=",np.array(mycobot.get_coords()))
+#        print("upC1L-gtC1L=",C1L-np.array(mycobot.get_coords()))
 
 ############################################################################
 # for test (middle-point1)
@@ -193,12 +207,18 @@ def test(mycobot):
         mycobot.send_coords(C1R, speed,0)
 #        print("::get_coords() ==> coords: {}".format(mycobot.get_coords()))
         time.sleep(wait)
+        print("upC1R",i,C1R)
+        print("gtC1R=",np.array(mycobot.get_coords()))
+        print("upC1R-gtC1R=",C1R-np.array(mycobot.get_coords()))
 
 # for test (from C1L to C1R)set
         print("===== 5 ==> C1Rset")
         mycobot.send_coord(Coord.Z.value,set_height, 10)
 #        print("::get_coords() ==> coords: {}".format(mycobot.get_coords()))
         time.sleep(wait)
+        print("upC1R,Z=",i,C1R,set_height)
+        print("gtC1R=",np.array(mycobot.get_coords()))
+#        print("upC1R-gtC1R=",C1L-np.array(mycobot.get_coords()))
 
 # set vacuum OFF!
         print("GPIO20,GPIO21 output-H => vacuum OFF")
@@ -211,6 +231,9 @@ def test(mycobot):
         mycobot.send_coord(Coord.Z.value,up_height,10)
 #        print("::get_coords() ==> coords: {}".format(mycobot.get_coords()))
         time.sleep(wait)
+        print("upC1R,Z=",i,C1R,up_height)
+        print("gtC1R=",np.array(mycobot.get_coords()))
+#        print("upC1R-gtC1R=",C1L-np.array(mycobot.get_coords()))
 
 
 # for test (middle-point1)
@@ -227,7 +250,8 @@ def test(mycobot):
 #        C1R=[91.6+x_shift, -153.3, 50, 88.88, 2.02, 1.1]
 #        x_shift=x_shift+12
 #        print("x_shift=",x_shift)
-
+#
+#                x              y       z     rx     ry    rz
         C1L=[C1L[0]+x_shift, C1L[1],C1L[2],C1L[3],C1L[4],C1L[5]]
         C1R=[C1R[0]+x_shift, C1R[1],C1R[2],C1R[3],C1R[4],C1R[5]]
 
