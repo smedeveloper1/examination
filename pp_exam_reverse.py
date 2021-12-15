@@ -189,10 +189,12 @@ def test(mycobot):
 
 
 # set vacuum ON!
+        '''
         print("GPIO20,GPIO21 output-L => vacuum ON")
         GPIO.setup(20,GPIO.OUT,initial=GPIO.LOW)
         GPIO.setup(21,GPIO.OUT,initial=GPIO.LOW)
         time.sleep(.5)
+        '''
 
         '''
 # for test (to C1L)set
@@ -276,10 +278,12 @@ def test(mycobot):
 
 
 # set vacuum OFF!
+        '''
         print("GPIO20,GPIO21 output-H => vacuum OFF")
         GPIO.setup(20,GPIO.OUT,initial=GPIO.HIGH)
         GPIO.setup(21,GPIO.OUT,initial=GPIO.HIGH)
         time.sleep(.5)
+        '''
 
         '''
 # for test (from C1R to C1R)up
@@ -298,14 +302,14 @@ def test(mycobot):
         print("upC5R,Z=",i,C5R,up_height)
         print("gtC5R=",np.array(mycobot.get_coords()))
 
-        '''
+        
 # for test (middle-point1)
         angles = [80, 25, 45, 15, 35, -45]
         mycobot.send_angles(angles, 50)
 #        print("::send_angles() ==> angles {}, speed 50\n".format(angles))
         time.sleep(2)
 #        print("::get_angles() ==> degrees: {}".format(mycobot.get_angles()))
-        '''
+        
 
 #        C1L=[-116.6, -150.5, 50, 90.53, 1.68, -3.23]
 #        C1R=[91.6, -153.3, 50, 88.88, 2.02, 1.1]
