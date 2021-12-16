@@ -2,6 +2,8 @@
 # pp_exam_vertical.py
 # 2021/12/16
 # pick up from vertical
+# add degree setting(for R)
+#
 #
 # 2021/12/06
 # pp_exam.py
@@ -150,7 +152,7 @@ def test(mycobot):
 #
 # 2021/12/16 pickup from vertical
     C1L=np.array([-114+20,-168,  50,  90,  0, -90])
-    C1R=np.array([  89+20,-168,  50,  90,  0, -90])
+    C1R=np.array([  89-20,-168,  50,  90,  0,  90])
 
 # 2021/11/23 nakahide
 # for debug
