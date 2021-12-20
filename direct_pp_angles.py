@@ -1,5 +1,6 @@
 # direct_pp_angles.py
 # 2021/12/20 nakahide
+# add vacuum execute => C1:pickup_OK C2-C5:pickup_NG
 # direct teaching 6th(+11mm+angles change + bring hand setting)
 #    :
 #    :
@@ -371,6 +372,12 @@ def test(mycobot):
 #    mycobot.send_coords(L_R_coords, speed,0)
     time.sleep(wait)
 
+# set vacuum ON!
+    print("GPIO20,GPIO21 output-L => vacuum ON")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.LOW)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.LOW)
+    time.sleep(.5)
+
     print("===== 1L ==> C1L")
     mycobot.send_angles(C1L_angles, speed)
 #    mycobot.send_coords(C1L_coords, speed,0)
@@ -386,10 +393,23 @@ def test(mycobot):
 #    mycobot.send_coords(C1R_coords, speed,0)
     time.sleep(wait)
 
+# set vacuum OFF!
+    print("GPIO20,GPIO21 output-H => vacuum OFF")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.HIGH)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.HIGH)
+    time.sleep(.5)
+
+
     print("===== 0 ==> L_R")
     mycobot.send_angles(L_R_angles, speed)
 #    mycobot.send_coords(L_R_coords, speed,0)
     time.sleep(wait)
+
+# set vacuum ON!
+    print("GPIO20,GPIO21 output-L => vacuum ON")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.LOW)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.LOW)
+    time.sleep(.5)
 
     print("===== 2L ==> C2L")
     mycobot.send_angles(C2L_angles, speed)
@@ -406,10 +426,23 @@ def test(mycobot):
 #    mycobot.send_coords(C2R_coords, speed,0)
     time.sleep(wait)
 
+# set vacuum OFF!
+    print("GPIO20,GPIO21 output-H => vacuum OFF")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.HIGH)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.HIGH)
+    time.sleep(.5)
+
+
     print("===== 0 ==> L_R")
     mycobot.send_angles(L_R_angles, speed)
 #    mycobot.send_coords(L_R_coords, speed,0)
     time.sleep(wait)
+
+# set vacuum ON!
+    print("GPIO20,GPIO21 output-L => vacuum ON")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.LOW)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.LOW)
+    time.sleep(.5)
 
     print("===== 3L ==> C3L")
     mycobot.send_angles(C3L_angles, speed)
@@ -426,10 +459,23 @@ def test(mycobot):
 #    mycobot.send_coords(C3R_coords, speed,0)
     time.sleep(wait)
 
+# set vacuum OFF!
+    print("GPIO20,GPIO21 output-H => vacuum OFF")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.HIGH)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.HIGH)
+    time.sleep(.5)
+
+
     print("===== 0 ==> L_R")
     mycobot.send_angles(L_R_angles, speed)
 #    mycobot.send_coords(L_R_coords, speed,0)
     time.sleep(wait)
+
+# set vacuum ON!
+    print("GPIO20,GPIO21 output-L => vacuum ON")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.LOW)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.LOW)
+    time.sleep(.5)
 
     print("===== 4L ==> C4L")
     mycobot.send_angles(C4L_angles, speed)
@@ -446,10 +492,24 @@ def test(mycobot):
 #    mycobot.send_coords(C4R_coords, speed,0)
     time.sleep(wait)
 
+# set vacuum OFF!
+    print("GPIO20,GPIO21 output-H => vacuum OFF")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.HIGH)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.HIGH)
+    time.sleep(.5)
+
+
+
     print("===== 0 ==> L_R")
     mycobot.send_angles(L_R_angles, speed)
 #    mycobot.send_coords(L_R_coords, speed,0)
     time.sleep(wait)
+
+# set vacuum ON!
+    print("GPIO20,GPIO21 output-L => vacuum ON")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.LOW)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.LOW)
+    time.sleep(.5)
 
     print("===== 5L ==> C5L")
     mycobot.send_angles(C5L_angles, speed)
@@ -465,6 +525,13 @@ def test(mycobot):
     mycobot.send_angles(C5R_angles, speed)
 #    mycobot.send_coords(C5R_coords, speed,0)
     time.sleep(wait)
+
+# set vacuum OFF!
+    print("GPIO20,GPIO21 output-H => vacuum OFF")
+    GPIO.setup(20,GPIO.OUT,initial=GPIO.HIGH)
+    GPIO.setup(21,GPIO.OUT,initial=GPIO.HIGH)
+    time.sleep(.5)
+
 
     print("===== 0 ==> L_R")
     mycobot.send_angles(L_R_angles, speed)
