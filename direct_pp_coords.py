@@ -1,6 +1,8 @@
 # direct_pp_coords.py
 # 2021/12/20 nakahide
 # angles()=>coords()
+# add subtle adjustment(x,y,z)
+#
 # C1-C5 pickup_OK, place_ALLNG!
 #
 # direct_pp_angles.py
