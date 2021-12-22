@@ -1,7 +1,7 @@
 # ci_direct_pp_coords.py
 # 2021/12/22 nakahide
 # Environment change => circle layout Ver.
-# 1st try 
+# 1st try
 #
 # #
 # # direct_pp_coords.py
