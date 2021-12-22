@@ -3,6 +3,8 @@
 # Environment change => circle layout Ver.
 # 1st try
 # C1L=>C1R:moving ====> C2-C5 copy
+# coords adjust x,y,-5,-5
+#
 #
 # # direct_pp_coords.py
 # 2021/12/20 nakahide
