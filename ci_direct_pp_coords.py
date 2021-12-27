@@ -1,5 +1,9 @@
 # ci_direct_pp_coords.py
-# 2021/12/24
+# 2021/12/27 nakahide
+# C4,C5 adjuxt z,-1
+# B1-B5 pickup OK
+#
+# # 2021/12/24
 # add sum by np.array()
 # wait:wait 4 =>2
 # speed: fast=80/speed=50/slow=10
@@ -171,11 +175,11 @@ def test(mycobot):
 #
 #
 # 2021/12/23 nakahide
-#   tray_address_A-E
+#   tray_address_A-E select
 #
-#    t_ad_A=1
-#    t_ad_B=1
-#    t_ad_C=1
+    t_ad_A=1
+    t_ad_B=1
+    t_ad_C=1
 #    t_ad_D=1
 #    t_ad_E=1
 #
@@ -203,58 +207,63 @@ def test(mycobot):
 
 #####################################################################
 
+
+
+
+
 ##############################################################
 # angles for tray address
 ##############################################################
+    if(t_ad_C):
 # 1st trial()
 # add adjust x,y -5,-5
-# add C1,C2,C3 adjust z -1
-    C1L_angles=np.array([41.22, 53.34, 70.04, 55.81, 81.29, -4.21])
+# add C1,C2,C3,C4,C5 adjust z -1
+        C1L_angles=np.array([41.22, 53.34, 70.04, 55.81, 81.29, -4.21])
 #    C1L_coords=[-120.7, -130.1, 69.3, 89.88, 3.43, -130.08]
 #    C1L_coords=[-120.7-5, -130.1-5, 69.3, 89.88, 3.43, -130.08]
-    C1L_coords=np.array([-120.7-5, -130.1-5, 69.3-1, 89.88, 3.43, -130.08])
+        C1L_coords=np.array([-120.7-5, -130.1-5, 69.3-1, 89.88, 3.43, -130.08])
 
-    C2L_angles=np.array([45.35, 53.26, 70.13, 57.83, 81.12, -0.96])
+        C2L_angles=np.array([45.35, 53.26, 70.13, 57.83, 81.12, -0.96])
 #    C2L_coords=[-109.2, -136.7, 69.2, 90.19, 2.18, -125.76]
 #    C2L_coords=[-109.2-5, -136.7-5, 69.2, 90.19, 2.18, -125.76]
-    C2L_coords=np.array([-109.2-5, -136.7-5, 69.2-1, 90.19, 2.18, -125.76])
+        C2L_coords=np.array([-109.2-5, -136.7-5, 69.2-1, 90.19, 2.18, -125.76])
 
-    C3L_angles=np.array([49.21, 53.34, 70.04, 56.77, 85.07, -0.08])
+        C3L_angles=np.array([49.21, 53.34, 70.04, 56.77, 85.07, -0.08])
 #    C3L_coords=[-99.0, -142.2, 69.2, 90.01, 0.26, -125.85]
 #    C3L_coords=[-99.0-5, -142.2-5, 69.2, 90.01, 0.26, -125.85]
-    C3L_coords=np.array([-99.0-5, -142.2-5, 69.2-1, 90.01, 0.26, -125.85])
+        C3L_coords=np.array([-99.0-5, -142.2-5, 69.2-1, 90.01, 0.26, -125.85])
 
-    C4L_angles=np.array([53.34, 53.52, 70.13, 56.07, 84.28, -2.63])
+        C4L_angles=np.array([53.34, 53.52, 70.13, 56.07, 84.28, -2.63])
 #    C4L_coords=[-89.1, -150.0, 68.6, 89.97, 2.37, -120.93]
-    C4L_coords=np.array([-89.1-5, -150.0-5, 68.6, 89.97, 2.37, -120.93])
+        C4L_coords=np.array([-89.1-6, -150.0-5, 68.6-1, 89.97, 2.37, -120.93])
 
-    C5L_angles=np.array([56.95, 53.61, 70.04, 53.34, 86.04, -2.63])
+        C5L_angles=np.array([56.95, 53.61, 70.04, 53.34, 86.04, -2.63])
 #    C5L_coords=[-80.8, -157.1, 68.7, 89.79, -0.34, -119.09]
-    C5L_coords=np.array([-80.8-5, -157.1-5, 68.7, 89.79, -0.34, -119.09])
+        C5L_coords=np.array([-80.8-5, -157.1-5, 68.7-1, 89.79, -0.34, -119.09])
 
-    L_R_angles=np.array([82.79, 30.05, 70.13, 58.35, 86.66, -2.63])
-    L_R_coords=np.array([-4.8, -180.5, 140.8, 88.71, -18.77, -93.68])
+        L_R_angles=np.array([82.79, 30.05, 70.13, 58.35, 86.66, -2.63])
+        L_R_coords=np.array([-4.8, -180.5, 140.8, 88.71, -18.77, -93.68])
 
 
-    C1L_up_angles = C1L_angles + L_up_angles
-    C1R_up_angles = C1L_angles + R_up_angles
-    C1R_angles    = C1L_angles + R_angles
+        C1L_up_angles = C1L_angles + L_up_angles
+        C1R_up_angles = C1L_angles + R_up_angles
+        C1R_angles    = C1L_angles + R_angles
 
-    C2L_up_angles = C2L_angles + L_up_angles
-    C2R_up_angles = C2L_angles + R_up_angles
-    C2R_angles    = C2L_angles + R_angles
+        C2L_up_angles = C2L_angles + L_up_angles
+        C2R_up_angles = C2L_angles + R_up_angles
+        C2R_angles    = C2L_angles + R_angles
 
-    C3L_up_angles = C3L_angles + L_up_angles
-    C3R_up_angles = C3L_angles + R_up_angles
-    C3R_angles    = C3L_angles + R_angles
+        C3L_up_angles = C3L_angles + L_up_angles
+        C3R_up_angles = C3L_angles + R_up_angles
+        C3R_angles    = C3L_angles + R_angles
 
-    C4L_up_angles = C4L_angles + L_up_angles
-    C4R_up_angles = C4L_angles + R_up_angles
-    C4R_angles    = C4L_angles + R_angles
+        C4L_up_angles = C4L_angles + L_up_angles
+        C4R_up_angles = C4L_angles + R_up_angles
+        C4R_angles    = C4L_angles + R_angles
 
-    C5L_up_angles = C5L_angles + L_up_angles
-    C5R_up_angles = C5L_angles + R_up_angles
-    C5R_angles    = C5L_angles + R_angles
+        C5L_up_angles = C5L_angles + L_up_angles
+        C5R_up_angles = C5L_angles + R_up_angles
+        C5R_angles    = C5L_angles + R_angles
 
 #    C1R_angles=[]
 #    C1R_coords=[]
@@ -272,193 +281,734 @@ def test(mycobot):
 #    C5R_coords=[]
 
 
-    print("=== init ==> L_R")
+        print("=== init ==> L_R")
 #    mycobot.send_angles(C1_LR_angles, speed) # 2021/12/24 => NG:average of C1L_up & C1R_up
 #    mycobot.send_angles(L_R_angles, speed,0)
-    mycobot.send_coords(L_R_coords, speed,0)
-    time.sleep(wait)
+        mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
 
 
 #### C1 Start #################################
-    print("===== 1L ==> C1L_up")
-    mycobot.send_angles(C1L_up_angles, fast)
+        print("===== 1L ==> C1L_up")
+        mycobot.send_angles(C1L_up_angles, fast)
 #    mycobot.send_coords(C1L_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum ON!
-    if (vacuum_use):
-        vacuum_on()
-    print("===== 1L ==> C1L pickup")
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 1L ==> C1L pickup")
 #    mycobot.send_angles(C1L_angles, speed)
-    mycobot.send_coords(C1L_coords, slow,0)
-    time.sleep(wait)
-    print("===== 1L ==> J2_up")
-    mycobot.send_angles(C1L_up_angles, fast)
+        mycobot.send_coords(C1L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 1L ==> J2_up")
+        mycobot.send_angles(C1L_up_angles, fast)
 #    mycobot.send_coords(C1L_coords, speed,0)
-    time.sleep(wait)
-    print("===== 1R ==> J1_rotate_R")
-    mycobot.send_angles(C1R_up_angles, fast)
+        time.sleep(wait)
+        print("===== 1R ==> J1_rotate_R")
+        mycobot.send_angles(C1R_up_angles, fast)
 #    mycobot.send_coords(C1R?_coords, speed,0)
-    time.sleep(wait)
-    print("===== 1R ==> J2_down")
-    mycobot.send_angles(C1R_angles, slow)
+        time.sleep(wait)
+        print("===== 1R ==> J2_down")
+        mycobot.send_angles(C1R_angles, slow)
 #    mycobot.send_coords(C1R?_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum OFF!
-    if (vacuum_use):
-        vacuum_off()
-    print("===== 1R ==> J2_up")
-    mycobot.send_angles(C1R_up_angles, fast)
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 1R ==> J2_up")
+        mycobot.send_angles(C1R_up_angles, fast)
 #    mycobot.send_coords(C1R?_coords, speed,0)
-    time.sleep(wait)
-    print("== 1-end ==> L_R")
-    mycobot.send_angles(L_R_angles, fast)
+        time.sleep(wait)
+        print("== 1-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
 #    mycobot.send_coords(L_R_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 #### C1 End ###################################
 #### C2 Start #################################
-    print("===== 2L ==> C2L_up")
-    mycobot.send_angles(C2L_up_angles, fast)
+        print("===== 2L ==> C2L_up")
+        mycobot.send_angles(C2L_up_angles, fast)
 #    mycobot.send_coords(C2L_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum ON!
-    if (vacuum_use):
-        vacuum_on()
-    print("===== 2L ==> C2L pickup")
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 2L ==> C2L pickup")
 #    mycobot.send_angles(C2L_angles, speed)
-    mycobot.send_coords(C2L_coords, slow,0)
-    time.sleep(wait)
-    print("===== 2L ==> J2_up")
-    mycobot.send_angles(C2L_up_angles, fast)
+        mycobot.send_coords(C2L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 2L ==> J2_up")
+        mycobot.send_angles(C2L_up_angles, fast)
 #    mycobot.send_coords(C2L_coords, speed,0)
-    time.sleep(wait)
-    print("===== 2R ==> J1_rotate_R")
-    mycobot.send_angles(C2R_up_angles, fast)
+        time.sleep(wait)
+        print("===== 2R ==> J1_rotate_R")
+        mycobot.send_angles(C2R_up_angles, fast)
 #    mycobot.send_coords(C2R?_coords, speed,0)
-    time.sleep(wait)
-    print("===== 2R ==> J2_down")
-    mycobot.send_angles(C2R_angles, slow)
+        time.sleep(wait)
+        print("===== 2R ==> J2_down")
+        mycobot.send_angles(C2R_angles, slow)
 #    mycobot.send_coords(C2R?_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum OFF!
-    if (vacuum_use):
-        vacuum_off()
-    print("===== 2R ==> J2_up")
-    mycobot.send_angles(C2R_up_angles, fast)
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 2R ==> J2_up")
+        mycobot.send_angles(C2R_up_angles, fast)
 #    mycobot.send_coords(C2R?_coords, speed,0)
-    time.sleep(wait)
-    print("== 2-end ==> L_R")
-    mycobot.send_angles(L_R_angles, fast)
+        time.sleep(wait)
+        print("== 2-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
 #    mycobot.send_coords(L_R_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 #### C2 End ###################################
 #### C3 Start #################################
-    print("===== 3L ==> C3L_up")
-    mycobot.send_angles(C3L_up_angles, fast)
+        print("===== 3L ==> C3L_up")
+        mycobot.send_angles(C3L_up_angles, fast)
 #    mycobot.send_coords(C3L_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum ON!
-    if (vacuum_use):
-        vacuum_on()
-    print("===== 3L ==> C3L pickup")
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 3L ==> C3L pickup")
 #    mycobot.send_angles(C3L_angles, speed)
-    mycobot.send_coords(C3L_coords, slow,0)
-    time.sleep(wait)
-    print("===== 3L ==> J2_up")
-    mycobot.send_angles(C3L_up_angles, fast)
+        mycobot.send_coords(C3L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 3L ==> J2_up")
+        mycobot.send_angles(C3L_up_angles, fast)
 #    mycobot.send_coords(C3L_coords, speed,0)
-    time.sleep(wait)
-    print("===== 3R ==> J1_rotate_R")
-    mycobot.send_angles(C3R_up_angles, fast)
+        time.sleep(wait)
+        print("===== 3R ==> J1_rotate_R")
+        mycobot.send_angles(C3R_up_angles, fast)
 #    mycobot.send_coords(C3R?_coords, speed,0)
-    time.sleep(wait)
-    print("===== 3R ==> J2_down")
-    mycobot.send_angles(C3R_angles, slow)
+        time.sleep(wait)
+        print("===== 3R ==> J2_down")
+        mycobot.send_angles(C3R_angles, slow)
 #    mycobot.send_coords(C3R?_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum OFF!
-    if (vacuum_use):
-        vacuum_off()
-    print("===== 3R ==> J2_up")
-    mycobot.send_angles(C3R_up_angles, fast)
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 3R ==> J2_up")
+        mycobot.send_angles(C3R_up_angles, fast)
 #    mycobot.send_coords(C3R?_coords, speed,0)
-    time.sleep(wait)
-    print("== 3-end ==> L_R")
-    mycobot.send_angles(L_R_angles, fast)
+        time.sleep(wait)
+        print("== 3-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
 #    mycobot.send_coords(L_R_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 #### C3 End ###################################
 #### C4 Start #################################
-    print("===== 4L ==> C4L_up")
-    mycobot.send_angles(C4L_up_angles, fast)
+        print("===== 4L ==> C4L_up")
+        mycobot.send_angles(C4L_up_angles, fast)
 #    mycobot.send_coords(C4L_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum ON!
-    if (vacuum_use):
-        vacuum_on()
-    print("===== 4L ==> C4L pickup")
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 4L ==> C4L pickup")
 #    mycobot.send_angles(C4L_angles, speed)
-    mycobot.send_coords(C4L_coords, slow,0)
-    time.sleep(wait)
-    print("===== 4L ==> J2_up")
-    mycobot.send_angles(C4L_up_angles, fast)
+        mycobot.send_coords(C4L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 4L ==> J2_up")
+        mycobot.send_angles(C4L_up_angles, fast)
 #    mycobot.send_coords(C4L_coords, speed,0)
-    time.sleep(wait)
-    print("===== 4R ==> J1_rotate_R")
-    mycobot.send_angles(C4R_up_angles, fast)
+        time.sleep(wait)
+        print("===== 4R ==> J1_rotate_R")
+        mycobot.send_angles(C4R_up_angles, fast)
 #    mycobot.send_coords(C4R?_coords, speed,0)
-    time.sleep(wait)
-    print("===== 4R ==> J2_down")
-    mycobot.send_angles(C4R_angles, slow)
+        time.sleep(wait)
+        print("===== 4R ==> J2_down")
+        mycobot.send_angles(C4R_angles, slow)
 #    mycobot.send_coords(C4R?_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum OFF!
-    if (vacuum_use):
-        vacuum_off()
-    print("===== 4R ==> J2_up")
-    mycobot.send_angles(C4R_up_angles, fast)
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 4R ==> J2_up")
+        mycobot.send_angles(C4R_up_angles, fast)
 #    mycobot.send_coords(C4R?_coords, speed,0)
-    time.sleep(wait)
-    print("== 4-end ==> L_R")
-    mycobot.send_angles(L_R_angles, fast)
+        time.sleep(wait)
+        print("== 4-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
 #    mycobot.send_coords(L_R_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 #### C4 End ###################################
 #### C5 Start #################################
-    print("===== 5L ==> C5L_up")
-    mycobot.send_angles(C5L_up_angles, fast)
+        print("===== 5L ==> C5L_up")
+        mycobot.send_angles(C5L_up_angles, fast)
 #    mycobot.send_coords(C5L_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum ON!
-    if (vacuum_use):
-        vacuum_on()
-    print("===== 5L ==> C5L pickup")
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 5L ==> C5L pickup")
 #    mycobot.send_angles(C5L_angles, speed)
-    mycobot.send_coords(C5L_coords, slow,0)
-    time.sleep(wait)
-    print("===== 5L ==> J2_up")
-    mycobot.send_angles(C5L_up_angles, fast)
+        mycobot.send_coords(C5L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 5L ==> J2_up")
+        mycobot.send_angles(C5L_up_angles, fast)
 #    mycobot.send_coords(C5L_coords, speed,0)
-    time.sleep(wait)
-    print("===== 5R ==> J1_rotate_R")
-    mycobot.send_angles(C5R_up_angles, fast)
+        time.sleep(wait)
+        print("===== 5R ==> J1_rotate_R")
+        mycobot.send_angles(C5R_up_angles, fast)
 #    mycobot.send_coords(C5R?_coords, speed,0)
-    time.sleep(wait)
-    print("===== 5R ==> J2_down")
-    mycobot.send_angles(C5R_angles, slow)
+        time.sleep(wait)
+        print("===== 5R ==> J2_down")
+        mycobot.send_angles(C5R_angles, slow)
 #    mycobot.send_coords(C5R?_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 # set vacuum OFF!
-    if (vacuum_use):
-        vacuum_off()
-    print("===== 5R ==> J2_up")
-    mycobot.send_angles(C5R_up_angles, fast)
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 5R ==> J2_up")
+        mycobot.send_angles(C5R_up_angles, fast)
 #    mycobot.send_coords(C5R?_coords, speed,0)
-    time.sleep(wait)
-    print("== 5-end ==> L_R")
-    mycobot.send_angles(L_R_angles, fast)
+        time.sleep(wait)
+        print("== 5-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
 #    mycobot.send_coords(L_R_coords, speed,0)
-    time.sleep(wait)
+        time.sleep(wait)
 #### C5 End ###################################
+
+
+
+##############################################################
+# angles for tray address
+##############################################################
+    if(t_ad_B):
+# 1st trial()
+# add adjust x,y,z,-3,-3,-3
+        B1L_angles=np.array([42.36, 70.4, 32.51, 78.39, 75.49, 0.0])
+#    B1L_coords=np.array([-140.1, -153.8, 71.4, 90.33, 1.27, -123.13])
+        B1L_coords=np.array([-140.1-3, -153.8-3, 71.4-3, 90.33, 1.27, -123.13])
+
+        B2L_angles=np.array([45.43, 70.4, 32.43, 78.39, 75.58, 0.0])
+#    B2L_coords=np.array([-131.7, -161.2, 71.6, 90.3, 1.19, -120.14])
+        B2L_coords=np.array([-131.7-3, -161.2-3, 71.6-3, 90.3, 1.19, -120.14])
+
+        B3L_angles=np.array([48.86, 70.48, 32.51, 78.39, 75.58, -1.49])
+#    B3L_coords=np.array([-121.7, -168.6, 71.1, 90.35, 2.85, -116.7])
+        B3L_coords=np.array([-121.7-3, -168.6-3, 71.1-3, 90.35, 2.85, -116.7])
+
+        B4L_angles=np.array([51.94, 70.48, 32.51, 78.39, 75.58, -1.49])
+#    B4L_coords=np.array([-112.5, -174.9, 71.1, 90.35, 2.85, -113.62])
+        B4L_coords=np.array([-112.5-3, -174.9-3, 71.1-3, 90.35, 2.85, -113.62])
+
+        B5L_angles=np.array([55.19, 70.48, 32.51, 78.48, 74.88, -0.79])
+#    B5L_coords=np.array([-102.5, -181.4, 71.1, 90.38, 2.23, -109.67])
+        B5L_coords=np.array([-102.5-3, -181.4-3, 71.1-3, 90.38, 2.23, -109.67])
+
+        L_R_angles=np.array([89.12, 58.27, 44.82, 66.0, 74.88, -8.26])
+        L_R_coords=np.array([16.0, -213.8, 96.4, 87.12, -2.43, -75.9])
+
+
+        B1L_up_angles = B1L_angles + L_up_angles
+        B1R_up_angles = B1L_angles + R_up_angles
+        B1R_angles    = B1L_angles + R_angles
+
+        B2L_up_angles = B2L_angles + L_up_angles
+        B2R_up_angles = B2L_angles + R_up_angles
+        B2R_angles    = B2L_angles + R_angles
+
+        B3L_up_angles = B3L_angles + L_up_angles
+        B3R_up_angles = B3L_angles + R_up_angles
+        B3R_angles    = B3L_angles + R_angles
+
+        B4L_up_angles = B4L_angles + L_up_angles
+        B4R_up_angles = B4L_angles + R_up_angles
+        B4R_angles    = B4L_angles + R_angles
+
+        B5L_up_angles = B5L_angles + L_up_angles
+        B5R_up_angles = B5L_angles + R_up_angles
+        B5R_angles    = B5L_angles + R_angles
+
+#    B1R_angles=[]
+#    B1R_coords=[]
+
+#    B2R_angles=[]
+#    B2R_coords=[]
+
+#    B3R_angles=[]
+#    B3R_coords=[]
+
+#    B4R_angles=[]
+#    B4R_coords=[]
+
+#    B5R_angles=[]
+#    B5R_coords=[]
+
+
+        print("=== init ==> L_R")
+#    mycobot.send_angles(B1_LR_angles, speed) # 2021/12/24 => NG:average of B1L_up & B1R_up
+#    mycobot.send_angles(L_R_angles, speed,0)
+        mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+
+
+#### B1 Start #################################
+        print("===== 1L ==> B1L_up")
+        mycobot.send_angles(B1L_up_angles, fast)
+#    mycobot.send_coords(B1L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 1L ==> B1L pickup")
+#    mycobot.send_angles(B1L_angles, speed)
+        mycobot.send_coords(B1L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 1L ==> J2_up")
+        mycobot.send_angles(B1L_up_angles, fast)
+#    mycobot.send_coords(B1L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 1R ==> J1_rotate_R")
+        mycobot.send_angles(B1R_up_angles, fast)
+#    mycobot.send_coords(B1R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 1R ==> J2_down")
+        mycobot.send_angles(B1R_angles, slow)
+#    mycobot.send_coords(B1R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 1R ==> J2_up")
+        mycobot.send_angles(B1R_up_angles, fast)
+#    mycobot.send_coords(B1R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 1-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### B1 End ###################################
+#### B2 Start #################################
+        print("===== 2L ==> B2L_up")
+        mycobot.send_angles(B2L_up_angles, fast)
+#    mycobot.send_coords(B2L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 2L ==> B2L pickup")
+#    mycobot.send_angles(B2L_angles, speed)
+        mycobot.send_coords(B2L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 2L ==> J2_up")
+        mycobot.send_angles(B2L_up_angles, fast)
+#    mycobot.send_coords(B2L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 2R ==> J1_rotate_R")
+        mycobot.send_angles(B2R_up_angles, fast)
+#    mycobot.send_coords(B2R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 2R ==> J2_down")
+        mycobot.send_angles(B2R_angles, slow)
+#    mycobot.send_coords(B2R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 2R ==> J2_up")
+        mycobot.send_angles(B2R_up_angles, fast)
+#    mycobot.send_coords(B2R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 2-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### B2 End ###################################
+#### B3 Start #################################
+        print("===== 3L ==> B3L_up")
+        mycobot.send_angles(B3L_up_angles, fast)
+#    mycobot.send_coords(B3L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 3L ==> B3L pickup")
+#    mycobot.send_angles(B3L_angles, speed)
+        mycobot.send_coords(B3L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 3L ==> J2_up")
+        mycobot.send_angles(B3L_up_angles, fast)
+#    mycobot.send_coords(B3L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 3R ==> J1_rotate_R")
+        mycobot.send_angles(B3R_up_angles, fast)
+#    mycobot.send_coords(B3R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 3R ==> J2_down")
+        mycobot.send_angles(B3R_angles, slow)
+#    mycobot.send_coords(B3R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 3R ==> J2_up")
+        mycobot.send_angles(B3R_up_angles, fast)
+#    mycobot.send_coords(B3R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 3-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### B3 End ###################################
+#### B4 Start #################################
+        print("===== 4L ==> B4L_up")
+        mycobot.send_angles(B4L_up_angles, fast)
+#    mycobot.send_coords(B4L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 4L ==> B4L pickup")
+#    mycobot.send_angles(B4L_angles, speed)
+        mycobot.send_coords(B4L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 4L ==> J2_up")
+        mycobot.send_angles(B4L_up_angles, fast)
+#    mycobot.send_coords(B4L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 4R ==> J1_rotate_R")
+        mycobot.send_angles(B4R_up_angles, fast)
+#    mycobot.send_coords(B4R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 4R ==> J2_down")
+        mycobot.send_angles(B4R_angles, slow)
+#    mycobot.send_coords(B4R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 4R ==> J2_up")
+        mycobot.send_angles(B4R_up_angles, fast)
+#    mycobot.send_coords(B4R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 4-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### B4 End ###################################
+#### B5 Start #################################
+        print("===== 5L ==> B5L_up")
+        mycobot.send_angles(B5L_up_angles, fast)
+#    mycobot.send_coords(B5L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 5L ==> B5L pickup")
+#    mycobot.send_angles(B5L_angles, speed)
+        mycobot.send_coords(B5L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 5L ==> J2_up")
+        mycobot.send_angles(B5L_up_angles, fast)
+#    mycobot.send_coords(B5L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 5R ==> J1_rotate_R")
+        mycobot.send_angles(B5R_up_angles, fast)
+#    mycobot.send_coords(B5R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 5R ==> J2_down")
+        mycobot.send_angles(B5R_angles, slow)
+#    mycobot.send_coords(B5R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 5R ==> J2_up")
+        mycobot.send_angles(B5R_up_angles, fast)
+#    mycobot.send_coords(B5R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 5-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### B5 End ###################################
+
+##############################################################
+# angles for tray address
+##############################################################
+    if(t_ad_A):
+# 1st trial()
+# add adjust x,y,-5,-5
+        '''
+        A1L_angles=np.array([25.66, 55.01, 65.3, 60.73, -6.15, -0.7])
+#        A1L_coords=np.array([-166.2, -155.6, 70.1, 91.04, 0.58, -58.17])
+        A1L_coords=np.array([-166.2-5, -155.6-5, 70.1, 91.04, 0.58, -58.17])
+
+        A2L_angles=np.array([28.47, 55.01, 65.21, 61.78, -5.97, -1.58])
+#        A2L_coords=np.array([-157.4, -162.9, 69.5, 92.01, 1.37, -55.49])
+        A2L_coords=np.array([-157.4-5, -162.9-5, 69.5, 92.01, 1.37, -55.49])
+        '''
+
+        A3L_angles=np.array([30.58, 53.08, 69.6, 57.04, -10.63, -2.63])
+#        A3L_coords=np.array([-147.8, -170.8, 70.8, 89.74, 2.68, -48.79])
+        A3L_coords=np.array([-147.8-3, -170.8-3, 70.8+1, 89.74, 2.68, -48.79])
+
+        A4L_angles=np.array([34.01, 53.08, 69.6, 56.95, -7.82, -1.58])
+#        A4L_coords=np.array([-139.0, -177.7, 70.9, 89.65, 1.62, -48.17])
+        A4L_coords=np.array([-139.0-1, -177.7-3, 70.9+1, 89.65, 1.62, -48.17])
+
+        A5L_angles=np.array([36.91, 53.08, 69.6, 56.86, -7.82, -2.54])
+#        A5L_coords=np.array([-129.9, -184.6, 70.9, 89.56, 2.6, -45.28])
+        A5L_coords=np.array([-129.9-1, -184.6-2, 70.9+1, 89.56, 2.6, -45.28])
+
+        '''
+        L_R_angles=np.array([71.54, 41.22, 69.52, 64.24, -13.18, 5.27])
+        L_R_coords=np.array([2.4, -225.7, 109.3, 85.1, -4.11, -4.87])
+        '''
+#
+# 2021/12/27 nakahide
+# add adjust C1-C5        z,+1
+# add adjust C3,C4,C5,    x,y,-5,-5
+        A1L_angles=np.array([32.34, 60.73, 53.43, 67.76, 15.55, -0.35])
+#        A1L_coords=np.array([-162.9, -163.7, 69.3, 91.86, 0.86, -73.19])
+        A1L_coords=np.array([-162.9, -163.7, 69.3+1, 91.86, 0.86, -73.19])
+
+        A2L_angles=np.array([35.33, 60.82, 53.08, 68.02, 15.55, -2.28])
+#        A2L_coords=np.array([-154.3, -172.1, 69.6, 91.86, 2.8, -70.14])
+        A2L_coords=np.array([-154.3, -172.1, 69.6+1, 91.86, 2.8, -70.14])
+
+        '''
+        A3L_angles=np.array([39.81, 60.82, 53.34, 67.32, 22.85, -2.28])
+#        A3L_coords=np.array([-142.8, -178.5, 69.6, 91.37, 2.86, -72.97])
+        A3L_coords=np.array([-142.8-6, -178.5-5, 69.6+1, 91.37, 2.86, -72.97])
+
+        A4L_angles=np.array([42.71, 60.82, 53.34, 67.32, 22.67, -2.28])
+#        A4L_coords=np.array([-133.5, -185.6, 69.6, 91.38, 2.86, -69.89])
+        A4L_coords=np.array([-133.5-7, -185.6-5, 69.6+1, 91.38, 2.86, -69.89])
+
+        A5L_angles=np.array([45.43, 60.82, 53.52, 67.32, 21.7, -2.28])
+#        A5L_coords=np.array([-124.0, -192.2, 69.2, 91.55, 2.9, -66.19])
+        A5L_coords=np.array([-124.0-7, -192.2-5, 69.2+1, 91.55, 2.9, -66.19])
+        '''
+
+        L_R_angles=np.array([83.67, 48.69, 52.99, 56.07, 21.88, -2.28])
+        L_R_coords=np.array([19.1, -248.1, 131.1, 69.32, -5.97, -27.53])
+
+        A1L_up_angles = A1L_angles + L_up_angles
+        A1R_up_angles = A1L_angles + R_up_angles
+        A1R_angles    = A1L_angles + R_angles
+
+        A2L_up_angles = A2L_angles + L_up_angles
+        A2R_up_angles = A2L_angles + R_up_angles
+        A2R_angles    = A2L_angles + R_angles
+
+        A3L_up_angles = A3L_angles + L_up_angles
+        A3R_up_angles = A3L_angles + R_up_angles
+        A3R_angles    = A3L_angles + R_angles
+
+        A4L_up_angles = A4L_angles + L_up_angles
+        A4R_up_angles = A4L_angles + R_up_angles
+        A4R_angles    = A4L_angles + R_angles
+
+        A5L_up_angles = A5L_angles + L_up_angles
+        A5R_up_angles = A5L_angles + R_up_angles
+        A5R_angles    = A5L_angles + R_angles
+
+#    A1R_angles=[]
+#    A1R_coords=[]
+
+#    A2R_angles=[]
+#    A2R_coords=[]
+
+#    A3R_angles=[]
+#    A3R_coords=[]
+
+#    A4R_angles=[]
+#    A4R_coords=[]
+
+#    A5R_angles=[]
+#    A5R_coords=[]
+
+
+        print("=== init ==> L_R")
+#    mycobot.send_angles(A1_LR_angles, speed) # 2021/12/24 => NG:average of A1L_up & A1R_up
+#    mycobot.send_angles(L_R_angles, speed,0)
+        mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+
+
+#### A1 Start #################################
+        print("===== 1L ==> A1L_up")
+        mycobot.send_angles(A1L_up_angles, fast)
+#    mycobot.send_coords(A1L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 1L ==> A1L pickup")
+#    mycobot.send_angles(A1L_angles, speed)
+        mycobot.send_coords(A1L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 1L ==> J2_up")
+        mycobot.send_angles(A1L_up_angles, fast)
+#    mycobot.send_coords(A1L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 1R ==> J1_rotate_R")
+        mycobot.send_angles(A1R_up_angles, fast)
+#    mycobot.send_coords(A1R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 1R ==> J2_down")
+        mycobot.send_angles(A1R_angles, slow)
+#    mycobot.send_coords(A1R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 1R ==> J2_up")
+        mycobot.send_angles(A1R_up_angles, fast)
+#    mycobot.send_coords(A1R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 1-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### A1 End ###################################
+#### A2 Start #################################
+        print("===== 2L ==> A2L_up")
+        mycobot.send_angles(A2L_up_angles, fast)
+#    mycobot.send_coords(A2L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 2L ==> A2L pickup")
+#    mycobot.send_angles(A2L_angles, speed)
+        mycobot.send_coords(A2L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 2L ==> J2_up")
+        mycobot.send_angles(A2L_up_angles, fast)
+#    mycobot.send_coords(A2L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 2R ==> J1_rotate_R")
+        mycobot.send_angles(A2R_up_angles, fast)
+#    mycobot.send_coords(A2R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 2R ==> J2_down")
+        mycobot.send_angles(A2R_angles, slow)
+#    mycobot.send_coords(A2R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 2R ==> J2_up")
+        mycobot.send_angles(A2R_up_angles, fast)
+#    mycobot.send_coords(A2R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 2-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### A2 End ###################################
+#### A3 Start #################################
+        print("===== 3L ==> A3L_up")
+        mycobot.send_angles(A3L_up_angles, fast)
+#    mycobot.send_coords(A3L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 3L ==> A3L pickup")
+#    mycobot.send_angles(A3L_angles, speed)
+        mycobot.send_coords(A3L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 3L ==> J2_up")
+        mycobot.send_angles(A3L_up_angles, fast)
+#    mycobot.send_coords(A3L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 3R ==> J1_rotate_R")
+        mycobot.send_angles(A3R_up_angles, fast)
+#    mycobot.send_coords(A3R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 3R ==> J2_down")
+        mycobot.send_angles(A3R_angles, slow)
+#    mycobot.send_coords(A3R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 3R ==> J2_up")
+        mycobot.send_angles(A3R_up_angles, fast)
+#    mycobot.send_coords(A3R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 3-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### A3 End ###################################
+#### A4 Start #################################
+        print("===== 4L ==> A4L_up")
+        mycobot.send_angles(A4L_up_angles, fast)
+#    mycobot.send_coords(A4L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 4L ==> A4L pickup")
+#    mycobot.send_angles(A4L_angles, speed)
+        mycobot.send_coords(A4L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 4L ==> J2_up")
+        mycobot.send_angles(A4L_up_angles, fast)
+#    mycobot.send_coords(A4L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 4R ==> J1_rotate_R")
+        mycobot.send_angles(A4R_up_angles, fast)
+#    mycobot.send_coords(A4R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 4R ==> J2_down")
+        mycobot.send_angles(A4R_angles, slow)
+#    mycobot.send_coords(A4R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 4R ==> J2_up")
+        mycobot.send_angles(A4R_up_angles, fast)
+#    mycobot.send_coords(A4R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 4-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### A4 End ###################################
+#### A5 Start #################################
+        print("===== 5L ==> A5L_up")
+        mycobot.send_angles(A5L_up_angles, fast)
+#    mycobot.send_coords(A5L_coords, speed,0)
+        time.sleep(wait)
+# set vacuum ON!
+        if (vacuum_use):
+            vacuum_on()
+        print("===== 5L ==> A5L pickup")
+#    mycobot.send_angles(A5L_angles, speed)
+        mycobot.send_coords(A5L_coords, slow,0)
+        time.sleep(wait)
+        print("===== 5L ==> J2_up")
+        mycobot.send_angles(A5L_up_angles, fast)
+#    mycobot.send_coords(A5L_coords, speed,0)
+        time.sleep(wait)
+        print("===== 5R ==> J1_rotate_R")
+        mycobot.send_angles(A5R_up_angles, fast)
+#    mycobot.send_coords(A5R?_coords, speed,0)
+        time.sleep(wait)
+        print("===== 5R ==> J2_down")
+        mycobot.send_angles(A5R_angles, slow)
+#    mycobot.send_coords(A5R?_coords, speed,0)
+        time.sleep(wait)
+# set vacuum OFF!
+        if (vacuum_use):
+            vacuum_off()
+        print("===== 5R ==> J2_up")
+        mycobot.send_angles(A5R_up_angles, fast)
+#    mycobot.send_coords(A5R?_coords, speed,0)
+        time.sleep(wait)
+        print("== 5-end ==> L_R")
+        mycobot.send_angles(L_R_angles, fast)
+#    mycobot.send_coords(L_R_coords, speed,0)
+        time.sleep(wait)
+#### A5 End ###################################
 
     '''
     print("===== 0 ==> L_R")
