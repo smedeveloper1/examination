@@ -1,8 +1,12 @@
 #
 # chk_anc.py
 # for check angle and coords
+# 2022/01/05 nakahie 
+# add datetime info.
+#
 # 2021/12/17 nakahide
 #
+import datetime
 import time
 import os
 import sys
@@ -46,7 +50,8 @@ def test(mycobot):
 # check angles
 #
 ###################################################################
-
+    dt_now=datetime.datetime.now()
+    print(dt_now)
     print("::get_angles() ==> degrees: {}".format(mycobot.get_angles()))
     print("::get_coords() ==> coords: {}".format(mycobot.get_coords()))
 
