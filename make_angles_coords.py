@@ -64,8 +64,10 @@ def test(mycobot):
     slow=10
 
     for i in range(1000):
-        j1=random.randint(-90.0,160.0)
-        j2=random.randint(-20.0,80.0)
+#        j1=random.randint(-90.0,160.0)
+        j1=random.randint(-30.0,160.0)
+#        j2=random.randint(-20.0,80.0)
+        j2=random.randint(0.0,50.0)
         j3=random.randint(-20.0,120.0)
         j4=random.randint(-20.0,120.0)
         j5=random.randint(-90.0,90.0)
