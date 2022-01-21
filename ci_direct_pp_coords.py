@@ -1,5 +1,8 @@
 # ci_direct_pp_coords.py
-# 2022/01/05 nakahide
+# # 2022/01/20 nakahide
+# A1-E5 25/25pcs pickup OK!!
+#
+# # 2022/01/05 nakahide
 # A1-A5 info update
 #
 # 2021/12/28 nakahide
